@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import { getProducts } from '../database/model.js';
 
 export async function getServerSideProps() {
@@ -21,7 +22,10 @@ export default function Home({ products }) {
           <ul>
             {products.map((product) => (
               <li key={product.id}>
-                {product.name}, £{product.price}
+                <Link href={`/products/${product.id}`}>
+                  <a>{product.name}</a>
+                </Link>
+                , £{product.price}
               </li>
             ))}
           </ul>
