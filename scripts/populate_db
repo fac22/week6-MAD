@@ -1,0 +1,7 @@
+#! /bin/sh
+
+# stop script when an error occurs
+set -e
+
+psql postgres://mad_games_user:pass123@localhost:5432/mad_games -q -f "./database/init.sql"
+echo "Populated database tables"

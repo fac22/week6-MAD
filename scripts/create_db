@@ -1,0 +1,13 @@
+#! /bin/sh
+
+# stop script when an error occurs
+set -e
+
+psql -q -c "CREATE USER mad_games_user SUPERUSER PASSWORD 'pass123'"
+echo "Created Postgres user 'mad_games_user'"
+
+psql -q -c "CREATE DATABASE mad_games WITH OWNER mad_games_user"
+echo "Created Postgres database 'mad_games'"
+
+echo "DATABASE_URL='postgres://mad_games_user:pass123@localhost:5432/mad_games'" > .env.local
+echo "Created .env.local containing DATABASE_URL"
