@@ -22,7 +22,7 @@ export default function Home({ products }) {
           <ul>
             {products.map((product) => (
               <li key={product.id}>
-                <Link href={`/products/${product.id}`}>
+                <Link href={`/products/${product.name}`}>
                   <a>{product.name}</a>
                 </Link>
                 , £{product.price}
