@@ -28,7 +28,34 @@ export async function getStaticPaths() {
 export default function Product({ product }) {
   return (
     <Layout>
-      <p>{product.name}</p>
+      <section>
+        <header>
+          <h2>{product.name}</h2>
+          <p>
+            <i>
+              {`${product.publisher ? product.publisher : ''}`}
+              {product.created_at}, {product.category}, {product.genre}
+            </i>
+          </p>
+        </header>
+        <p>
+          <b>£{product.price}</b>
+        </p>
+        <p>Current stock: {product.stock}</p>
+        <h3>Description</h3>
+        <p>{product.description}</p>
+        {product.id === 1 ? (
+          <p>
+            <a
+              href="https://heuristic-spence-8ef2b4.netlify.app/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              DEMO
+            </a>
+          </p>
+        ) : null}
+      </section>
     </Layout>
   );
 }
