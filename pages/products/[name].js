@@ -33,7 +33,7 @@ export default function Product({ product }) {
           <h2>{product.name}</h2>
           <p>
             <i>
-              {`${product.publisher ? product.publisher : ''}`}
+              {`${product.publisher ? `${product.publisher}, ` : ''}`}
               {product.created_at}, {product.category}, {product.genre}
             </i>
           </p>
