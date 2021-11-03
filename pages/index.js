@@ -1,7 +1,10 @@
+import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { getProducts } from '../database/model.js';
 import Layout from '../components/layout.js';
+import PriceFilter from '../components/PriceFilter.js';
+import ProductList from '../components/ProductList.js';
 
 export async function getServerSideProps() {
   const products = await getProducts();
@@ -11,6 +14,8 @@ export async function getServerSideProps() {
 }
 
 export default function Home({ products }) {
+  const [min, setMin] = React.useState(0);
+  const [max, setMax] = React.useState(200);
   return (
     <Layout home>
       <Head>
@@ -20,16 +25,12 @@ export default function Home({ products }) {
 
       <main>
         <section>
-          <ul>
-            {products.map((product) => (
-              <li key={product.id}>
-                <Link href={`/products/${product.name}`}>
-                  <a>{product.name}</a>
-                </Link>
-                , £{product.price}
-              </li>
-            ))}
-          </ul>
+          <form>
+            <PriceFilter min={min} setMin={setMin} max={max} setMax={setMax} />
+          </form>
+        </section>
+        <section>
+          <ProductList products={products} min={min} max={max} />
         </section>
       </main>
     </Layout>
