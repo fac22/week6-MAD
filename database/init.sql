@@ -18,7 +18,7 @@ CREATE TABLE sessions (
 
 CREATE TABLE products (
     id SERIAL PRIMARY KEY,
-    name TEXT NOT NULL,
+    name TEXT UNIQUE NOT NULL,
     genre TEXT NOT NULL,
     category TEXT NOT NULL,
     publisher TEXT NULL DEFAULT NULL,
