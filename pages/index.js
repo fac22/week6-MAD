@@ -5,6 +5,7 @@ import { getProducts } from '../database/model.js';
 import Layout from '../components/layout.js';
 import PriceFilter from '../components/PriceFilter.js';
 import ProductList from '../components/ProductList.js';
+import PubFilter from '../components/PubFilter.js';
 
 export async function getServerSideProps() {
   const products = await getProducts();
@@ -27,6 +28,7 @@ export default function Home({ products }) {
         <section>
           <form>
             <PriceFilter min={min} setMin={setMin} max={max} setMax={setMax} />
+            <PubFilter />
           </form>
         </section>
         <section>
