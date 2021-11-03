@@ -4,7 +4,7 @@ export default function Layout({ children, home }) {
   return (
     <>
       <header>
-        <div>MAD GAMES Online Store</div>
+        <h1>MAD GAMES Online Store</h1>
         <nav>
           <ol>
             <li>
