@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { getProducts } from '../database/model.js';
+import Layout from '../components/layout.js';
 
 export async function getServerSideProps() {
   const products = await getProducts();
@@ -11,7 +12,7 @@ export async function getServerSideProps() {
 
 export default function Home({ products }) {
   return (
-    <>
+    <Layout home>
       <Head>
         <title>MAD GAMES</title>
         <meta name="description" content="MAD GAMES Online Store" />
@@ -31,6 +32,6 @@ export default function Home({ products }) {
           </ul>
         </section>
       </main>
-    </>
+    </Layout>
   );
 }

@@ -1,4 +1,5 @@
 import { getProduct, getProducts } from '../../database/model.js';
+import Layout from '../../components/layout.js';
 
 export async function getStaticProps({ params }) {
   const product = await getProduct(params.name);
@@ -25,5 +26,9 @@ export async function getStaticPaths() {
 }
 
 export default function Product({ product }) {
-  return <p>{product.name}</p>;
+  return (
+    <Layout>
+      <p>{product.name}</p>
+    </Layout>
+  );
 }
