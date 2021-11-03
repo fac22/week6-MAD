@@ -1,19 +1,25 @@
-export default function PubFilter() {
-  const categories = ['a'];
-  const category = 'a';
+export default function PubFilter({ publisher, setPublisher, products }) {
+  const publishers = [
+    'All',
+    ...new Set(
+      products
+        .filter((product) => product.publisher)
+        .map((product) => product.publisher)
+    ),
+  ];
   return (
     <fieldset>
-      <legend>Category</legend>
-      {categories.map((cat) => (
-        <label htmlFor={cat} key={cat}>
-          {cat}
+      <legend>Publisher</legend>
+      {publishers.map((pub) => (
+        <label htmlFor={pub} key={pub}>
+          {pub}
           <input
             type="radio"
             name="categories"
-            id={cat}
-            value={cat}
-            checked={cat === category}
-            onChange={(e) => setCategory(e.target.value)}
+            id={pub}
+            value={pub}
+            checked={pub === publisher}
+            onChange={(e) => setPublisher(e.target.value)}
           />
         </label>
       ))}

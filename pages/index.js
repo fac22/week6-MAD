@@ -17,6 +17,7 @@ export async function getServerSideProps() {
 export default function Home({ products }) {
   const [min, setMin] = React.useState(0);
   const [max, setMax] = React.useState(200);
+  const [publisher, setPublisher] = React.useState('All');
   return (
     <Layout home>
       <Head>
@@ -28,7 +29,11 @@ export default function Home({ products }) {
         <section>
           <form>
             <PriceFilter min={min} setMin={setMin} max={max} setMax={setMax} />
-            <PubFilter />
+            <PubFilter
+              publisher={publisher}
+              setPublisher={setPublisher}
+              products={products}
+            />
           </form>
         </section>
         <section>
