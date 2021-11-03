@@ -1,7 +1,6 @@
 import Link from 'next/link';
 
 export default function Layout({ children, home }) {
-  // console.log(products);
   return (
     <>
       <header>
