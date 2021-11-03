@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function PriceFilter({ min, setMin, max, setMax }) {
   return (
     <fieldset>
