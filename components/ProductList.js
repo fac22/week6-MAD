@@ -1,9 +1,12 @@
 import Link from 'next/dist/client/link';
 
-export default function ProductList({ products, min, max, genre }) {
+export default function ProductList({ products, min, max, genre, publisher }) {
   return (
     <ul>
       {products
+        .filter((product) =>
+          publisher === 'All' ? true : product.publisher === publisher
+        )
         .filter((product) => genre === 'All' ? products : product.genre === genre)
         .filter(
           (product) =>
