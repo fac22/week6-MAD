@@ -45,18 +45,20 @@ export default function Product({ product }) {
         {product.description ? (
           <>
             <h3>Description</h3>
-            <p>{product.description}</p>
             {product.id === 1 ? (
               <p>
+                {product.description}{' '}
                 <a
                   href="https://heuristic-spence-8ef2b4.netlify.app/"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  DEMO
+                  Try the demo here!
                 </a>
               </p>
-            ) : null}
+            ) : (
+              <p> {product.description} </p>
+            )}
           </>
         ) : null}
       </section>
