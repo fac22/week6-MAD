@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-export default function Layout({ children, home }) {
+export default function Layout({ children, home, basket }) {
+  const noItems = Object.values(basket).reduce((a, c) => a + c, 0);
   return (
     <>
       <header className="header header--background">
@@ -15,7 +16,7 @@ export default function Layout({ children, home }) {
           <Link href="/">
             <a className="header__link">
               <p>🛒</p>
-              <p>£0.00</p>
+              <p>No. of items: {noItems}</p>
             </a>
           </Link>
         </section>

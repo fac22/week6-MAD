@@ -15,15 +15,28 @@ export async function getServerSideProps() {
   };
 }
 
-export default function Home({ products }) {
+export default function Home({ products, basket, setBasket }) {
   const [min, setMin] = React.useState(0);
   const [max, setMax] = React.useState(200);
   const [category, setCategory] = React.useState('All');
   const [publisher, setPublisher] = React.useState('All');
   const [genre, setGenre] = React.useState('All');
 
+  React.useEffect(() => {
+    const localNumsStrs = Object.values(window.localStorage);
+    const localNums = localNumsStrs.map((numStr) => parseInt(numStr));
+    const localKeys = Object.keys(window.localStorage);
+
+    const obj = {};
+    localKeys.forEach((key, i) => (obj[key] = localNums[i]));
+
+    setBasket((oldBasket) => {
+      return { ...oldBasket, ...obj };
+    });
+  }, []);
+
   return (
-    <Layout home>
+    <Layout home basket={basket} setBasket={setBasket}>
       <Head>
         <title>MAD GAMES</title>
         <meta name="description" content="MAD GAMES Online Store" />
