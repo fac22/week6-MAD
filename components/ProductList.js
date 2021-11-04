@@ -1,9 +1,10 @@
 import Link from 'next/dist/client/link';
 
-export default function ProductList({ products, min, max }) {
+export default function ProductList({ products, min, max, genre }) {
   return (
     <ul>
       {products
+        .filter((product) => genre === 'All' ? products : product.genre === genre)
         .filter(
           (product) =>
             parseInt(product.price) >= min && parseInt(product.price) <= max
