@@ -1,0 +1,21 @@
+:root {
+  --green: hsl(110, 85%, 36%);
+  --darkGreen: hsl(121, 64%, 18%);
+  --darkLavender: hsl(234, 12%, 50%);
+  --lavender: hsl(257, 100%, 93%);
+  --darkPurple: hsl(254, 37%, 12%);
+}
+
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: inherit;
+  padding: inherit;
+}
