@@ -37,7 +37,12 @@ export default function Home({ products }) {
           </form>
         </section>
         <section>
-          <ProductList products={products} min={min} max={max} />
+          <ProductList
+            products={products}
+            min={min}
+            max={max}
+            publisher={publisher}
+          />
         </section>
       </main>
     </Layout>
