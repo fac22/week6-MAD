@@ -2,7 +2,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Layout({ children, home, basket }) {
-  console.log('layout', basket);
   const noItems = Object.values(basket).reduce((a, c) => a + c, 0);
   return (
     <>
