@@ -17,7 +17,7 @@ export async function getServerSideProps() {
 export default function Home({ products }) {
   const [min, setMin] = React.useState(0);
   const [max, setMax] = React.useState(200);
-  const [genre, setGenre] = React.useState('All genres');
+  const [genre, setGenre] = React.useState('All');
   return (
     <Layout home>
       <Head>
@@ -37,7 +37,7 @@ export default function Home({ products }) {
           </form>
         </section>
         <section>
-          <ProductList products={products} min={min} max={max} />
+          <ProductList products={products} min={min} max={max} genre={genre} />
         </section>
       </main>
     </Layout>
