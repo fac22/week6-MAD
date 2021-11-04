@@ -2,7 +2,7 @@ export default function GenreFilter({ products, genre, setGenre }) {
   const genres = ['All', ...new Set(products.map((product) => product.genre))];
   return (
     <fieldset>
-      <legend>Select your genre</legend>
+      <legend>Genre</legend>
       {genres.map((gen) => (
         <label htmlFor={gen} key={gen}>
           {gen}

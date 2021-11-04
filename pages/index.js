@@ -29,10 +29,10 @@ export default function Home({ products }) {
         <meta name="description" content="MAD GAMES Online Store" />
       </Head>
 
-      <main>
-        <section>
-          <form>
-            <PriceFilter min={min} setMin={setMin} max={max} setMax={setMax} />
+      <section>
+        <form>
+          <PriceFilter min={min} setMin={setMin} max={max} setMax={setMax} />
+          <div className="radios">
             <CategoryFilter
               products={products}
               category={category}
@@ -48,19 +48,19 @@ export default function Home({ products }) {
               genre={genre}
               setGenre={setGenre}
             />
-          </form>
-        </section>
-        <section>
-          <ProductList
-            products={products}
-            min={min}
-            max={max}
-            publisher={publisher}
-            genre={genre}
-            category={category}
-          />
-        </section>
-      </main>
+          </div>
+        </form>
+      </section>
+      <section>
+        <ProductList
+          products={products}
+          min={min}
+          max={max}
+          publisher={publisher}
+          genre={genre}
+          category={category}
+        />
+      </section>
     </Layout>
   );
 }
