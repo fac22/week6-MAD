@@ -4,7 +4,7 @@ import Image from 'next/image';
 export default function Layout({ children, home }) {
   return (
     <>
-      <header className="header--background">
+      <header className="header header--background">
         <Link href="/">
           <a className="header__link">
             <h1>MAD_GAMES</h1>
