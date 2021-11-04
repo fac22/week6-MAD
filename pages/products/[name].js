@@ -1,5 +1,5 @@
 import { getProduct, getProducts } from '../../database/model.js';
-import Layout from '../../components/layout.js';
+import Layout from '../../components/Layout.js';
 
 export async function getStaticProps({ params }) {
   const product = await getProduct(params.name);
