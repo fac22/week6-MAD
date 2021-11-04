@@ -35,6 +35,7 @@ body {
 
 main {
   height: 100%;
+  padding: 0.5rem;
 }
 
 a {
@@ -64,6 +65,22 @@ h1 {
 .header {
   display: flex;
   justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  font-size: 0.7rem;
+}
+
+.footer__left {
+  max-width: 40%;
+}
+
+.footer__right {
+  max-width: 40%;
 }
 
 .footer--background {
