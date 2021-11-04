@@ -17,6 +17,49 @@ html {
 }
 
 body {
+  margin: 0;
   padding: 0;
+}
+
+#__next {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  background-color: var(--darkPurple);
+  color: var(--lavender);
+}
+
+a {
+  color: var(--green);
+}
+a:hover {
+  color: var(--lavender);
+}
+
+h1 {
+  margin-top: 0;
+}
+
+.header__link {
+  text-decoration: none;
+  color: var(--darkGreen);
+}
+
+.header__link:hover {
+  color: var(--green);
+}
+
+header {
+  background-color: var(--lavender);
+}
+
+footer {
+  background-color: var(--lavender);
+  color: var(--darkGreen);
+}
+
+p {
   margin: 0;
 }

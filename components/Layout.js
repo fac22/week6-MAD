@@ -6,14 +6,14 @@ export default function Layout({ children, home }) {
     <>
       <header>
         <Link href="/">
-          <a>
+          <a className="header__link">
             <h1>MAD_GAMES</h1>
             <p>Online Store</p>
           </a>
         </Link>
         <section>
           <Link href="/">
-            <a>
+            <a className="header__link">
               <p>🛒</p>
               <p>£0.00</p>
             </a>
@@ -42,7 +42,7 @@ export default function Layout({ children, home }) {
         </p>
         <p>© 2021 MAD_GAMES. All rights reserved.</p>
         <p>
-          MAD GAMES LTD. is a company registered in England and Wales (No.
+          MAD GAMES LTD. is not a company registered in England and Wales (No.
           12345678).
         </p>
       </footer>
