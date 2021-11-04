@@ -39,15 +39,17 @@ export default function Layout({ children, home }) {
             />
           </a>
         </p>
-        <address className="footer__left">
-          <p>MAD_GAMES</p>
-          <p>Space4</p>
-          <p>2nd Floor</p>
-          <p>113-115 Fonthill Road</p>
-          <p>Finsbury Park</p>
-          <p>London</p>
-          <p>N4 3HH</p>
-        </address>
+        <div className="footer__right">
+          <address>
+            <p>MAD_GAMES</p>
+            <p>Space4</p>
+            <p>2nd Floor</p>
+            <p>113-115 Fonthill Road</p>
+            <p>Finsbury Park</p>
+            <p>London</p>
+            <p>N4 3HH</p>
+          </address>
+        </div>
       </footer>
     </>
   );

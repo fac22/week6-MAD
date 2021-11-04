@@ -76,11 +76,13 @@ h1 {
 }
 
 .footer__left {
-  max-width: 40%;
+  width: 40%;
 }
 
 .footer__right {
-  max-width: 40%;
+  width: 40%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .footer--background {
