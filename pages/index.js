@@ -6,6 +6,7 @@ import Layout from '../components/layout.js';
 import PriceFilter from '../components/PriceFilter.js';
 import ProductList from '../components/ProductList.js';
 import PubFilter from '../components/PubFilter.js';
+import GenreFilter from '../components/GenreFilter.js';
 
 export async function getServerSideProps() {
   const products = await getProducts();
@@ -18,6 +19,8 @@ export default function Home({ products }) {
   const [min, setMin] = React.useState(0);
   const [max, setMax] = React.useState(200);
   const [publisher, setPublisher] = React.useState('All');
+  const [genre, setGenre] = React.useState('All');
+
   return (
     <Layout home>
       <Head>
@@ -32,7 +35,11 @@ export default function Home({ products }) {
             <PubFilter
               publisher={publisher}
               setPublisher={setPublisher}
+              products={products} />
+            <GenreFilter
               products={products}
+              genre={genre}
+              setGenre={setGenre}
             />
           </form>
         </section>
@@ -42,6 +49,7 @@ export default function Home({ products }) {
             min={min}
             max={max}
             publisher={publisher}
+            genre={genre}
           />
         </section>
       </main>
