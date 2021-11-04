@@ -22,6 +22,19 @@ export default function Home({ products, basket, setBasket }) {
   const [publisher, setPublisher] = React.useState('All');
   const [genre, setGenre] = React.useState('All');
 
+  React.useEffect(() => {
+    const localNumsStrs = Object.values(window.localStorage);
+    const localNums = localNumsStrs.map((numStr) => parseInt(numStr));
+    const localKeys = Object.keys(window.localStorage);
+
+    const obj = {};
+    localKeys.forEach((key, i) => (obj[key] = localNums[i]));
+
+    setBasket((oldBasket) => {
+      return { ...oldBasket, ...obj };
+    });
+  }, []);
+
   return (
     <Layout home basket={basket} setBasket={setBasket}>
       <Head>

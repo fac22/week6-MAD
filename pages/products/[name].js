@@ -27,13 +27,23 @@ export async function getStaticPaths() {
 }
 
 export default function Product({ product, basket, setBasket }) {
+  React.useEffect(() => {
+    const localNumsStrs = Object.values(window.localStorage);
+    const localNums = localNumsStrs.map((numStr) => parseInt(numStr));
+    const localKeys = Object.keys(window.localStorage);
+
+    const obj = {};
+    localKeys.forEach((key, i) => (obj[key] = localNums[i]));
+
+    setBasket((oldBasket) => {
+      return { ...oldBasket, ...obj };
+    });
+  }, []);
+
   const basketShenanigans = () => {
     const storedItem = window.localStorage.getItem(`${product.name}`);
     if (storedItem) {
-      window.localStorage.setItem(
-        `${product.name}`,
-        (parseInt(storedItem) + 1).toString()
-      );
+      window.localStorage.setItem(`${product.name}`, parseInt(storedItem) + 1);
       setBasket((oldBasket) => {
         return {
           ...oldBasket,
