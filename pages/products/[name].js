@@ -42,18 +42,22 @@ export default function Product({ product }) {
           <b>£{product.price}</b>
         </p>
         <p>Current stock: {product.stock}</p>
-        <h3>Description</h3>
-        <p>{product.description}</p>
-        {product.id === 1 ? (
-          <p>
-            <a
-              href="https://heuristic-spence-8ef2b4.netlify.app/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              DEMO
-            </a>
-          </p>
+        {product.description ? (
+          <>
+            <h3>Description</h3>
+            <p>{product.description}</p>
+            {product.id === 1 ? (
+              <p>
+                <a
+                  href="https://heuristic-spence-8ef2b4.netlify.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  DEMO
+                </a>
+              </p>
+            ) : null}
+          </>
         ) : null}
       </section>
     </Layout>
