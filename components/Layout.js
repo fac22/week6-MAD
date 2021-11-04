@@ -4,20 +4,20 @@ export default function Layout({ children, home }) {
   return (
     <>
       <header>
-        <h1>MAD_GAMES</h1>
-        <p>Online Store</p>
-        <nav>
-          <ol>
-            <li>
-              <Link href="/">
-                <a>Home</a>
-              </Link>
-            </li>
-            <li>Games</li>
-            <li>Genre</li>
-            <li>Category</li>
-          </ol>
-        </nav>
+        <Link href="/">
+          <a>
+            <h1>MAD_GAMES</h1>
+            <p>Online Store</p>
+          </a>
+        </Link>
+        <section>
+          <Link href="/">
+            <a>
+              <p>🛒</p>
+              <p>£0.00</p>
+            </a>
+          </Link>
+        </section>
       </header>
       <main>{children}</main>
       {!home && (
