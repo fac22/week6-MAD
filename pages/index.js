@@ -15,7 +15,7 @@ export async function getServerSideProps() {
   };
 }
 
-export default function Home({ products }) {
+export default function Home({ products, basket, setBasket }) {
   const [min, setMin] = React.useState(0);
   const [max, setMax] = React.useState(200);
   const [category, setCategory] = React.useState('All');
@@ -23,7 +23,7 @@ export default function Home({ products }) {
   const [genre, setGenre] = React.useState('All');
 
   return (
-    <Layout home>
+    <Layout home basket={basket} setBasket={setBasket}>
       <Head>
         <title>MAD GAMES</title>
         <meta name="description" content="MAD GAMES Online Store" />

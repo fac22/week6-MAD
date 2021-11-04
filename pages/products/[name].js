@@ -1,5 +1,6 @@
 import { getProduct, getProducts } from '../../database/model.js';
 import Layout from '../../components/Layout.js';
+import React from 'react';
 
 export async function getStaticProps({ params }) {
   const product = await getProduct(params.name);
@@ -25,9 +26,30 @@ export async function getStaticPaths() {
   };
 }
 
-export default function Product({ product }) {
+export default function Product({ product, basket, setBasket }) {
+  const basketShenanigans = () => {
+    const storedItem = window.localStorage.getItem(`${product.name}`);
+    if (storedItem) {
+      window.localStorage.setItem(
+        `${product.name}`,
+        (parseInt(storedItem) + 1).toString()
+      );
+      setBasket((oldBasket) => {
+        return {
+          ...oldBasket,
+          [product.name]: oldBasket[product.name] + 1,
+        };
+      });
+    } else {
+      window.localStorage.setItem(`${product.name}`, '1');
+      setBasket((oldBasket) => {
+        return { ...oldBasket, [product.name]: 1 };
+      });
+    }
+  };
+
   return (
-    <Layout>
+    <Layout basket={basket} setBasket={setBasket}>
       <section>
         <header>
           <h2>{product.name}</h2>
@@ -61,21 +83,7 @@ export default function Product({ product }) {
             )}
           </>
         ) : null}
-        <button
-          onClick={() => {
-            const storedItem = window.localStorage.getItem(`${product.name}`);
-            if (storedItem) {
-              window.localStorage.setItem(
-                `${product.name}`,
-                (parseInt(storedItem) + 1).toString()
-              );
-            } else {
-              window.localStorage.setItem(`${product.name}`, '1');
-            }
-          }}
-        >
-          Add to basket
-        </button>
+        <button onClick={basketShenanigans}>Add to basket</button>
       </section>
     </Layout>
   );
