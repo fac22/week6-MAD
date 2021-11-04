@@ -61,6 +61,21 @@ export default function Product({ product }) {
             )}
           </>
         ) : null}
+        <button
+          onClick={() => {
+            const storedItem = window.localStorage.getItem(`${product.name}`);
+            if (storedItem) {
+              window.localStorage.setItem(
+                `${product.name}`,
+                (parseInt(storedItem) + 1).toString()
+              );
+            } else {
+              window.localStorage.setItem(`${product.name}`, '1');
+            }
+          }}
+        >
+          Add to basket
+        </button>
       </section>
     </Layout>
   );
