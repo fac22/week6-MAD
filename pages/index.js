@@ -32,17 +32,23 @@ export default function Home({ products }) {
       <section>
         <form>
           <PriceFilter min={min} setMin={setMin} max={max} setMax={setMax} />
-          <CategoryFilter
-            products={products}
-            category={category}
-            setCategory={setCategory}
-          />
-          <PubFilter
-            publisher={publisher}
-            setPublisher={setPublisher}
-            products={products}
-          />
-          <GenreFilter products={products} genre={genre} setGenre={setGenre} />
+          <div className="radios">
+            <CategoryFilter
+              products={products}
+              category={category}
+              setCategory={setCategory}
+            />
+            <PubFilter
+              publisher={publisher}
+              setPublisher={setPublisher}
+              products={products}
+            />
+            <GenreFilter
+              products={products}
+              genre={genre}
+              setGenre={setGenre}
+            />
+          </div>
         </form>
       </section>
       <section>

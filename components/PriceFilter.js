@@ -1,6 +1,6 @@
 export default function PriceFilter({ min, setMin, max, setMax }) {
   return (
-    <fieldset>
+    <fieldset className="fieldset--full-width">
       <legend>Price</legend>
       <label htmlFor="min-price">
         Min price
