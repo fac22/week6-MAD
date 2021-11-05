@@ -4,6 +4,7 @@ export default function PriceFilter({ min, setMin, max, setMax }) {
       <legend>Price</legend>
       <label htmlFor="min-price">
         Min price
+        <output htmlFor="min-price">£{min}</output>
         <input
           type="range"
           id="min-price"
@@ -16,6 +17,7 @@ export default function PriceFilter({ min, setMin, max, setMax }) {
       </label>
       <label htmlFor="max-price">
         Max price
+        <output htmlFor="max-price">£{max}</output>
         <input
           type="range"
           id="max-price"
