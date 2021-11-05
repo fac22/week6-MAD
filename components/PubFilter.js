@@ -15,7 +15,7 @@ export default function PubFilter({ publisher, setPublisher, products }) {
           {pub}
           <input
             type="radio"
-            name="publishers"
+            name={pub}
             id={pub}
             value={pub}
             checked={pub === publisher}

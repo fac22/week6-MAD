@@ -11,7 +11,7 @@ export default function CategoryFilter({ products, category, setCategory }) {
           {cat}
           <input
             type="radio"
-            name="categories"
+            name={cat}
             id={cat}
             value={cat}
             checked={cat === category}

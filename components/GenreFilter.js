@@ -8,7 +8,7 @@ export default function GenreFilter({ products, genre, setGenre }) {
           {gen}
           <input
             type="radio"
-            name="genre"
+            name={gen}
             id={gen}
             value={gen}
             checked={gen === genre}
